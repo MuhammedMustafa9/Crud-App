@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week_8</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  </head>
+  <body style="padding: 0 0 50px 0">
+    <section>
+      <div class="container">
+        <div class="d-flex justify-content-center align-items-center mt-5   ">
+          <h1 class="fw-bold" style="font-size: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Crud_App</h1>
+        </div>
+        <div class="row bg-light rounded-5 mt-5 p-5">
+          <div class="col-12">
+            <form>
+              <div class="input">
+                <label class="fw-bold" for="pName">Product Name</label>
+                <input
+                  type="text"
+                  name="pName"
+                  id="pName"
+                  class="form-control mt-2" onkeyup="validateName()"
+                />
+                <div class="name-error alert alert-danger mt-3 d-none">
+                  
+                </div>
+              </div>
+              <div class="input mt-3">
+                <label class="fw-bold" for="pCategory">Product Categorey</label>
+                <input
+                  type="text"
+                  name="pCategory"
+                  id="pCategory"
+                  class="form-control mt-2"
+                  onkeyup="validateCateg()"
+                />
+                <div class="categ-error alert alert-danger mt-3 d-none">
+                  
+                </div>
+              </div>
+              <div class="input mt-3">
+                <label class="fw-bold" for="pPrice">Product Price</label>
+                <input
+                  type="text"
+                  min="1"
+                  name="pPrice"
+                  id="pPrice"
+                  class="form-control mt-2"
+                  onkeyup="validatePrice()"
+                />
+                <div class="price-error alert alert-danger mt-3 d-none">
+                  
+                </div>
+              </div>
+              <div class="input mt-3">
+                <label class="fw-bold" for="pName">Product Description <span class="fw-normal">(Optinal)</span></label>
+                <textarea
+                  rows="3"
+                  type="text"
+                  name="pDesc"
+                  id="pDesc"
+                  class="form-control mt-2"
+                ></textarea>
+              </div>
+              <div class="buttons mt-3">
+                <div class="btn px-5 py-2 btn-outline-primary" id="submitBtn">
+                  Add
+                </div>
+                <div
+                  class="btn px-5 py-2 btn-outline-danger ms-0 ms-md-3"
+                  id="resetBtn"
+                >
+                  Reset
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="my-3">
+      <div class="container">
+        <label for="search" class="fw-bold">Search Products</label>
+        <input
+          type="text"
+          name="search"
+          id="search"
+          class="form-control mt-2"
+        />
+      </div>
+    </section>
+    <section class="mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped">
+              <thead>
+                <th>id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Desc</th>
+                <th>Edit</th>
+                <th>Remove</th>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
